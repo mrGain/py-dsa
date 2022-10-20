@@ -28,7 +28,7 @@ class DoublyList:
 
         if position != None and position > 1:
             temp = self.head
-            for i in range(1,position-2):
+            for i in range(1,position-1):
                 temp = temp.next
             new_node.prev = temp
             new_node.next = temp.next
@@ -49,9 +49,9 @@ dll.Insert(30)
 dll.Insert(20)
 dll.Insert(13)
 dll.Insert(8)
-# dll.Insert(60,1)
 dll.displayList()
 dll.Insert(43,3)
+# dll.Insert(60,1)
 print()
 dll.displayList()
 
