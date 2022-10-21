@@ -42,6 +42,31 @@ class DoublyList:
             temp = temp.next
         return            
 
+    # Delete form a doubly linked list
+    def DeleteNode(self,position):
+        if self.head == None:
+            print("The linked list not exist")
+            return
+        if position == 1:
+            if self.head == self.tail:
+                self.head,self.tail = None,None
+            else:
+                self.head = self.head.next
+            return
+
+        temp = self.head
+        for i in range(1,position-1):
+            temp = temp.next
+
+        if temp.next == self.tail:
+            self.tail = self.tail.prev
+            self.tail.next = None
+
+        else:
+            temp.next = temp.next.next
+            temp.next.prev = temp                
+        return
+
 
 dll = DoublyList()
 dll.Insert(10)
@@ -50,8 +75,11 @@ dll.Insert(20)
 dll.Insert(13)
 dll.Insert(8)
 dll.displayList()
-dll.Insert(43,3)
-# dll.Insert(60,1)
+# dll.Insert(43,3)
+# # dll.Insert(60,1)
+# print()
+# dll.displayList()
+dll.DeleteNode(4)
 print()
 dll.displayList()
 
