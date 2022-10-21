@@ -20,11 +20,25 @@ class CircularDoublyList:
 
         else:
             if position == None:
+                new_node.prev = self.tail
                 self.tail.next = new_node
                 new_node.next = self.head
                 self.tail = new_node
+                self.head.prev = self.tail
 
             return
+
+    def ReverseList(self):
+        if self.head == None and self.tail== None:
+            print("List not exists")
+            return
+
+        temp = self.tail
+        print(temp.data,end="-->")
+        while temp.prev != self.tail:
+            temp = temp.prev
+            print(temp.data,end="-->")
+        return    
 
     def displayList(self):
         if self.head == None:
@@ -45,4 +59,6 @@ cdll.Insert(30)
 cdll.Insert(40)     
 cdll.Insert(4)     
 cdll.Insert(12)     
-cdll.displayList()          
+cdll.displayList()  
+print()
+cdll.ReverseList()        
