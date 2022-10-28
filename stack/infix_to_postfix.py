@@ -22,18 +22,25 @@ class Stack:
             print("Stack is Overflow")
             return
         else:
-            self.stk.push(data)
+            self.stk.append(data)
+
+    def pop(self):
+        if self.isEmpty():
+            return ""
+        else:
+            print("pop else")
+            self.stk.pop()            
 
     def peek(self):
         if self.isEmpty():
             print("Stack Underflow")
-            return
+            return 0
         else:
             return self.stk[-1]
 
 class InfinixToPostix:
     def __init__(self):
-        self.Stack = Stack()
+        self.Stack = Stack(20)
         self.postFix = ""
 
     def isOperand(self,char):
@@ -43,19 +50,34 @@ class InfinixToPostix:
             return True
 
     def presidence(self, char):
-        if char in ['+','-']:
+        if char == 0:
+            return 0
+        elif char in ['+','-']:
             return 1
         else:
             return 2
 
     def main(self,exp):
-        i = 0
-        j = 0                                      
-        while True:
+        i = 0                                     
+        while i<len(exp):
             if self.isOperand(exp[i]):
                 self.postFix = self.postFix + exp[i]
                 i = i+1
             else:
                 if self.presidence(exp[i])>self.presidence(self.Stack.peek()):
                     self.Stack.push(exp[i])
-                    i = i+1    
+                    i = i+1  
+                else:
+                    self.postFix = self.postFix + self.Stack.pop()
+
+        while not self.Stack.isEmpty():
+            self.postFix = self.postFix + self.Stack.pop()
+
+        return self.postFix   
+
+
+# exp = "a+b*c-d/e"
+exp = "a+b"
+intopst = InfinixToPostix()
+result = intopst.main(exp)
+print(result)
