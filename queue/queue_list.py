@@ -17,10 +17,21 @@ class Queue:
         self.que.append(item)
         return "The element is inserted in the Queue."
 
-
-    def queFront(self):
+    def deQueue(self):
         if self.isEmpty():
-            print("Sorry the Queue is Empty.")
+            return "Queue Underflow"
+        else:
+            return self.que.pop(0)
+
+    def peek(self):
+        if self.isEmpty():
+            return "Queue Underflow"
+        else:
+            return self.que[0]
+
+    def delete(self):
+        self.que = None            
+
 
 que = Queue()
 print(que.isEmpty())
@@ -28,4 +39,6 @@ que.enQueue(10)
 que.enQueue(7)
 que.enQueue(14)
 que.enQueue(30)
+print(que)
+que.deQueue()
 print(que)
