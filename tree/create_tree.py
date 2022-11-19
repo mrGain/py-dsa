@@ -4,7 +4,7 @@ class TreeNode:
         self.children = children
 
     def __str__(self, level = 0):
-        ret = " " * level + self.data + '\n'
+        ret = "  " * level + self.data + '\n'
 
         for child in self.children:
             ret += child.__str__(level + 1)
