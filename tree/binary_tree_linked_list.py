@@ -4,11 +4,6 @@ class TreeNode:
         self.data = data 
         self.rightChild = None 
 
-newBT = TreeNode('Dtinks')
-leftChild = TreeNode('Hot')        
-rightChild = TreeNode('Cold')
-newBT.leftChild = leftChild
-newBT.rightChild = rightChild
 
 # Pre-order Traversal ( root-->left-->right )
 def preOrderTraversal(rootNode):
@@ -18,5 +13,24 @@ def preOrderTraversal(rootNode):
     preOrderTraversal(rootNode.leftChild)    
     preOrderTraversal(rootNode.rightChild)
 
-preOrderTraversal(newBT)        
+ 
 
+# InOrder traversal ( left-->root-->right )
+def inOrderTraversal(rootNode):
+    if not rootNode:
+        return
+    inOrderTraversal(rootNode.leftChild)
+    print(rootNode.data)
+    inOrderTraversal(rootNode.rightChild)
+
+    
+newBT = TreeNode('Dtinks')
+leftChild = TreeNode('Hot')        
+rightChild = TreeNode('Cold')
+newBT.leftChild = leftChild
+newBT.rightChild = rightChild
+
+
+preOrderTraversal(newBT)   
+
+inOrderTraversal(newBT)
