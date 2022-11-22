@@ -61,7 +61,7 @@ class Queue:
         self.llist.head = None
         self.llist.tail = None
         return
-
+"""
 que = Queue()
 que.enQueue(3)
 que.enQueue(5)
@@ -75,3 +75,4 @@ print(que.deQueue())
 print(que.deQueue())
 print(que.deQueue())
 que.printList()
+"""
