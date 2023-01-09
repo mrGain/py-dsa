@@ -47,21 +47,21 @@ def levelOrderTraversal(rootNode):
             if (root.rightChild is not None):
                 customeQueue.enQueue(root.rightChild)    
 
+if __name__ == "__main__":
+    newBT = TreeNode('Dtinks')
+    leftChild = TreeNode('Hot')        
+    rightChild = TreeNode('Cold')
+    tea = TreeNode('tea')
+    coffee = TreeNode('coffee')
+    leftChild.leftChild = tea
+    leftChild.rightChild = coffee
+    newBT.leftChild = leftChild
+    newBT.rightChild = rightChild
 
-newBT = TreeNode('Dtinks')
-leftChild = TreeNode('Hot')        
-rightChild = TreeNode('Cold')
-tea = TreeNode('tea')
-coffee = TreeNode('coffee')
-leftChild.leftChild = tea
-leftChild.rightChild = coffee
-newBT.leftChild = leftChild
-newBT.rightChild = rightChild
 
+    #preOrderTraversal(newBT)   
 
-#preOrderTraversal(newBT)   
+    #inOrderTraversal(newBT)
 
-#inOrderTraversal(newBT)
-
-#postOrderTraversal(newBT)
-levelOrderTraversal(newBT)
+    #postOrderTraversal(newBT)
+    levelOrderTraversal(newBT)

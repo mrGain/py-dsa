@@ -61,18 +61,18 @@ class Queue:
         self.llist.head = None
         self.llist.tail = None
         return
-"""
-que = Queue()
-que.enQueue(3)
-que.enQueue(5)
-que.enQueue(8)
-que.enQueue(12)
-que.enQueue(34)
-que.enQueue(10)
 
-que.printList()
-print(que.deQueue())
-print(que.deQueue())
-print(que.deQueue())
-que.printList()
-"""
+if __name__ == "__main__":
+    que = Queue()
+    que.enQueue(3)
+    que.enQueue(5)
+    que.enQueue(8)
+    que.enQueue(12)
+    que.enQueue(34)
+    que.enQueue(10)
+
+    que.printList()
+    print(que.deQueue())
+    print(que.deQueue())
+    print(que.deQueue())
+    que.printList()
